@@ -220,5 +220,17 @@ function showFinal(){
 }
 </script>
 
+window.addEventListener("click", function () {
+  const music = document.getElementById("music");
+
+  music.load();
+
+  music.onloadedmetadata = () => {
+    music.currentTime = 10;
+    music.play();
+  };
+
+}, { once: true });
+
 </body>
 </html>
