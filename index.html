@@ -11,3 +11,228 @@
 	<h1>html</h1>
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+<audio id="music" loop>
+  <source src="tum-ho-toh.mp3" type="audio/mpeg">
+</audio>
+body {
+  margin:0;
+  font-family:'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#fbc2eb,#fcd6e3,#e0c3fc);
+  text-align:center;
+  overflow:hidden;
+}
+
+/* floating background */
+.floating {
+  position:absolute;
+  font-size:12px;
+  opacity:0.4;
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(100vh);}
+  100% {transform: translateY(-10vh);}
+}
+
+/* card */
+.card {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background: rgba(255,255,255,0.85);
+  padding:25px;
+  border-radius:20px;
+  width:85%;
+  max-width:380px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* countdown boxes */
+.row {
+  display:flex;
+  justify-content:space-between;
+  margin-top:15px;
+}
+
+.box {
+  background:#fff;
+  padding:12px;
+  border-radius:15px;
+  width:22%;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.box h2 {
+  margin:0;
+  color:#a64dff;
+}
+
+.box p {
+  margin:0;
+  font-size:12px;
+}
+
+/* message box */
+.messageBox {
+  background:#f7eaf3;
+  padding:12px;
+  border-radius:12px;
+  margin-top:15px;
+  font-size:14px;
+}
+
+/* bouncing dots */
+.loading-dots {
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:10px;
+}
+
+.loading-dots span {
+  width:10px;
+  height:10px;
+  background:#ff4da6;
+  border-radius:50%;
+  display:inline-block;
+  animation:bounce 1.2s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(2){animation-delay:0.2s;}
+.loading-dots span:nth-child(3){animation-delay:0.4s;}
+
+@keyframes bounce {
+  0%,80%,100% {transform:scale(0.6);opacity:0.5;}
+  40% {transform:scale(1);opacity:1;}
+}
+
+/* button */
+.giftBtn {
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  border-radius:25px;
+  background: linear-gradient(45deg,#ff4da6,#a64dff);
+  color:white;
+  font-size:16px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* hidden pages */
+#countdown, #middlePage, #final {
+  display:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div class="card" id="loader">
+  <h3>💗 😘🫂💐</h3>
+  <h3>Loading My love for my cutieeepieee...</h3>
+  <div class="loading-dots">
+    <span></span><span></span><span></span>
+  </div>
+</div>
+
+<!-- COUNTDOWN -->
+<div class="card" id="countdown">
+  <h3 style="color:#d63384;">MY GIRL'S  Special Day is Almost Here 💕🌺</h3>
+
+  <div class="row">
+    <div class="box"><h2>0</h2><p>Days 💗</p></div>
+    <div class="box"><h2>0</h2><p>Hours 🎁</p></div>
+    <div class="box"><h2>0</h2><p>Minutes 🎂</p></div>
+    <div class="box"><h2 id="sec">7</h2><p>Seconds 💗</p></div>
+  </div>
+
+  <div class="messageBox">
+    Just a little more... A small gift for my pyaara and cuttuu bachha 💗
+    <div class="loading-dots">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
+
+<!-- MIDDLE PAGE (LIKE YOUR IMAGE) -->
+<div class="card" id="middlePage">
+  <h3 style="color:#d63384;">MERI JAAN'S Special Day is Almost Here ! 😘💗💐</h3>
+  <h2>It's time!</h2>
+
+  <div class="messageBox">
+    Just a little more... A small gift from PASANDIA MARD to his GORGEOUS women (SHIVI🌺)💗🎁💐
+    <div class="loading-dots">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <button class="giftBtn" onclick="showFinal()">"TERE LIE 🫵"🫂 →</button>
+</div>
+
+<!-- FINAL PAGE -->
+<div class="card" id="final">
+  <h2>Happy Birthday meri rasmalai !!😋💗 🎂</h2>
+  <h3>The one who owns my heart, My forever love & Crush♾️..🌺💗🐥</h3>
+  <p>
+    🌺Shivi🌺..mere bachhee i loveee youu soo soo much that I can't even express by words..and today is my favourite and special person's birthday and the one who is precious to me and which I can't loose at any cost..you are the best person i have ever met..you are my "Saathiya" I will always be with you no matter what..!!okayy ?? May god bless you with success and happiness 😊 🫂 and once again a very warm and loveful birthday wish from me.. enjoy your day meri jaan..!! It's your day..wish we could go on date..😘❤️<br>
+    I Love you bohot hii zyadaaaa zyadaaa alwaysss anddd forever meri kuchhupuchuu Cuttuuu pyaare bachhe 💗🌺
+
+
+My cutee little princess 😘🫂💗
+
+
+You deserve everything(I AM YOUR EVERYTHING 😋🌺)beautiful 💫
+
+SHIVI ♾️SHIV
+  </p>
+</div>
+
+<script>
+// floating background
+let symbols=["❤️","💜","💗","🌺","🥰","😘","💐","🐥","🧿","💝","🫂","💓","💞","💘"];
+for(let i=0;i<25;i++){
+  let el=document.createElement("div");
+  el.className="floating";
+  el.innerHTML=symbols[Math.floor(Math.random()*symbols.length)];
+  el.style.left=Math.random()*100+"vw";
+  el.style.animationDuration=(6+Math.random()*6)+"s";
+  document.body.appendChild(el);
+}
+
+// loader → countdown
+setTimeout(()=>{
+  document.getElementById("loader").style.display="none";
+  document.getElementById("countdown").style.display="block";
+},2000);
+
+// countdown → middle page
+let sec=13;
+let timer=setInterval(()=>{
+  sec--;
+  document.getElementById("sec").innerText=sec;
+
+  if(sec==0){
+    clearInterval(timer);
+    document.getElementById("countdown").style.display="none";
+    document.getElementById("middlePage").style.display="block";
+  }
+},1000);
+
+// middle → final
+function showFinal(){
+  document.getElementById("middlePage").style.display="none";
+  document.getElementById("final").style.display="block";
+}
+</script>
+
+</body>
+</html>
