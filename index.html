@@ -4,9 +4,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-<audio id="music" loop>
-  <source src="tum-ho-toh.mp3" type="audio/mpeg">
-</audio>
 body {
   margin:0;
   font-family:'Segoe UI', sans-serif;
@@ -121,7 +118,9 @@ body {
 </head>
 
 <body>
-
+<audio controls autoplay loop>
+  <source src="tum-ho-toh.mp3" type="audio/mpeg">
+</audio>
 <!-- LOADER -->
 <div class="card" id="loader">
   <h3>💗 😘🫂💐</h3>
@@ -220,6 +219,10 @@ function showFinal(){
   document.getElementById("final").style.display="block";
 }
 </script>
-
+<script>
+window.addEventListener("click", function () {
+  document.getElementById("music").play();
+}, { once: true });
+</script>
 </body>
 </html>
