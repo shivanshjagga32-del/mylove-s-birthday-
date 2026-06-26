@@ -201,7 +201,7 @@ setTimeout(()=>{
 },2000);
 
 // countdown → middle page
-let sec=13;
+let sec=20;
 let timer=setInterval(()=>{
   sec--;
   document.getElementById("sec").innerText=sec;
@@ -223,6 +223,14 @@ function showFinal(){
 window.addEventListener("click", function () {
   document.getElementById("music").play();
 }, { once: true });
+
+const music = document.getElementById("music");
+
+window.addEventListener("click", function () {
+  music.currentTime = 35; // start from 10 seconds
+  music.play();
+}, { once: true });
+
 </script>
 </body>
 </html>
