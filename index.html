@@ -183,6 +183,19 @@ SHIVI ♾️SHIV
 </div>
 
 <script>
+<script>
+window.addEventListener("click", function () {
+  const music = document.getElementById("music");
+
+  music.load();
+
+  music.onloadedmetadata = () => {
+    music.currentTime = 10;
+    music.play();
+  };
+
+}, { once: true });
+
 // floating background
 let symbols=["❤️","💜","💗","🌺","🥰","😘","💐","🐥","🧿","💝","🫂","💓","💞","💘"];
 for(let i=0;i<25;i++){
@@ -218,18 +231,6 @@ function showFinal(){
   document.getElementById("middlePage").style.display="none";
   document.getElementById("final").style.display="block";
 }
-<script>
-window.addEventListener("click", function () {
-  const music = document.getElementById("music");
-
-  music.load();
-
-  music.onloadedmetadata = () => {
-    music.currentTime = 10;
-    music.play();
-  };
-
-}, { once: true });
 </script>
 
 </body>
